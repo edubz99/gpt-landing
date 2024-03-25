@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci
-      - run: npm run lint --filter=...[HEAD^1]
+      - run: npm run lint
 
   test:
     runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci
-      - run: npm run test --filter=...[HEAD^1]
+      - run: npm run test
 
   build:
     runs-on: ubuntu-latest
@@ -48,4 +48,4 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci
-      - run: npm run build --filter=...[HEAD^1]
+      - run: npm run build
